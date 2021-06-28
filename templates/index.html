@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pessoa DB</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/estilo.css') }}">
+</head>
+<body>
+
+<div class="topnav">
+    <a href="{{ url_for('index') }}">Homepage</a>
+    <a href="{{ url_for('pessoas') }}">Listar</a>
+    <a href="{{ url_for('inserir') }}">Inserir</a>
+    <a href="{{ url_for('apagar') }}">Apagar</a>
+    <a href="{{ url_for('editar') }}">Editar</a>
+    <a href="{{ url_for('pesquisar') }}">Pesquisar</a>
+</div>
+
+<div class="content">
+    {% block content %}
+        <h1>Homepage</h1>
+    {% endblock %}
+</div>
+
+<div class="footer">
+    <p>Footer</p>
+</div>
+
+</body>
+</html>

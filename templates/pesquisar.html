@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <h2>Pesquisar</h2>
+
+    <form action="{{ url_for('pesquisar') }}" method="POST">
+        <label for="pesquisar">Pesquisar:</label>
+        <input type="search" id="pesquisar" name="pesquisar">
+        <input type="submit" value="Pesquisar">
+    </form>
+
+    <table border='1'>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Salário</th>
+            <th>Telefone</th>
+            <th>Cod</th>
+        </tr>
+        {% for pessoa in pessoas %}
+            <tr>
+                <td>{{ pessoa.id }}</td>
+                <td>{{ pessoa.nome }}</td>
+                <td>{{ pessoa.idade }}</td>
+                <td>{{ pessoa.salario }}</td>
+                <td>{{ pessoa.telefone }}</td>
+                <td>{{ pessoa.cod }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <h2>Editar</h2>
+
+    <table border='1'>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Salário</th>
+            <th>Telefone</th>
+            <th>Cod</th>
+            <th></th>
+        </tr>
+        {% for pessoa in pessoas %}
+            <tr>
+                <td>{{ pessoa.id }}</td>
+                <td>{{ pessoa.nome }}</td>
+                <td>{{ pessoa.idade }}</td>
+                <td>{{ pessoa.salario }}</td>
+                <td>{{ pessoa.telefone }}</td>
+                <td>{{ pessoa.cod }}</td>
+                <td>
+                    <form action="{{ url_for('editar_pessoa', pessoa_id=pessoa.id) }}" method="GET">
+                        <input type="submit" value="Editar">
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

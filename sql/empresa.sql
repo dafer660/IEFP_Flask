@@ -1,0 +1,38 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+USE empresa;
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+CREATE TABLE `pessoa` (
+  `Id` int(11) NOT NULL,
+  `Nome` varchar(255) NOT NULL,
+  `Idade` int(11) NOT NULL,
+  `Salario` int(11) NOT NULL,
+  `telefone` int(11) DEFAULT NULL,
+  `Cod` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `pessoa` (`Id`, `Nome`, `Idade`, `Salario`, `telefone`, `Cod`) VALUES
+(5, 'Celia Morais', 26, 170000, 123456, 1100),
+(14, 'Nascimento Augusto', 35, 220000, NULL, 2300),
+(25, 'Paulo Veigas', 32, 95000, NULL, 1500),
+(32, 'Florinda Simoes', 36, 147000, NULL, 4000),
+(37, 'Isabel Espada', 28, 86000, NULL, 1100),
+(42, 'Antonio Dias', 43, 74000, NULL, 1500),
+(49, 'Jose Antonio', 17, 210000, NULL, 1500);
+
+ALTER TABLE `pessoa`
+  ADD PRIMARY KEY (`Id`),
+  ADD KEY `nome` (`Nome`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

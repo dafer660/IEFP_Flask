@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <h2>Listar</h2>
+
+    <table border='1'>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Salário</th>
+            <th>Telefone</th>
+            <th>Cod</th>
+        </tr>
+        {% for pessoa in pessoas %}
+            <tr>
+                <td>{{ pessoa.id }}</td>
+                <td>{{ pessoa.nome }}</td>
+                <td>{{ pessoa.idade }}</td>
+                <td>{{ pessoa.salario }}</td>
+                <td>{{ pessoa.telefone }}</td>
+                <td>{{ pessoa.cod }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

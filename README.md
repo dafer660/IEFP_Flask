@@ -2,6 +2,14 @@
 
 Projeto em **Flask** com **Base de Dados MariaDB/MySQL**
 
+### Criação de Ambiente virtual
+
+Para criar o nosso ambiente virtual, basta correr o seguinte comando:
+
+`````commandline
+python -m venv venv
+`````
+
 ### Dependencias
 
 Podem ser instadas com recurso ao ficheiro ```requirements.txt``` através do comando
@@ -10,14 +18,6 @@ pip install -r requirements.txt
 ````
 
 ###### Nota: para instalar a dependencias terão que correr o comando na directoria principal.
-
-### Criação de Ambiente virtual
-
-Para criar o nosso ambiente virtual, basta correr o seguinte comando:
-
-`````commandline
-python -m venv venv
-`````
 
 ### Estrutura do Projecto
 

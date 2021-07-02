@@ -1,32 +1,38 @@
 {% extends "index.html" %}
 
 {% block content %}
-    <h2>Editar</h2>
-
-    <table border='1'>
-        <tr>
-            <th>Id</th>
-            <th>Nome</th>
-            <th>Idade</th>
-            <th>Salário</th>
-            <th>Telefone</th>
-            <th>Cod</th>
-            <th></th>
-        </tr>
-        {% for pessoa in pessoas %}
+    <h2 class="text-center">Editar</h2>
+    <div class="container container-fluid">
+        <table border='1' class="table">
+            <thead class="thead-dark">
             <tr>
-                <td>{{ pessoa.id }}</td>
-                <td>{{ pessoa.nome }}</td>
-                <td>{{ pessoa.idade }}</td>
-                <td>{{ pessoa.salario }}</td>
-                <td>{{ pessoa.telefone }}</td>
-                <td>{{ pessoa.cod }}</td>
-                <td>
-                    <form action="{{ url_for('editar_pessoa', pessoa_id=pessoa.id) }}" method="GET">
-                        <input type="submit" value="Editar">
-                    </form>
-                </td>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Salário</th>
+                <th>Telefone</th>
+                <th>Cod</th>
+                <th></th>
             </tr>
-        {% endfor %}
-    </table>
+            </thead>
+            <tbody>
+            {% for pessoa in pessoas %}
+                <tr>
+                    <td>{{ pessoa.id }}</td>
+                    <td>{{ pessoa.nome }}</td>
+                    <td>{{ pessoa.idade }}</td>
+                    <td>{{ pessoa.salario }}</td>
+                    <td>{{ pessoa.telefone }}</td>
+                    <td>{{ pessoa.cod }}</td>
+                    <td>
+                        <form action="{{ url_for('editar_pessoa', pessoa_id=pessoa.id) }}" method="GET">
+                            <input type="submit" class="btn btn-primary" value="Editar">
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
 {% endblock %}

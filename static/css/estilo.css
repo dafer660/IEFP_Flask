@@ -37,55 +37,6 @@ body {
     height: 100%; /* Should be removed. Only for demonstration */
 }
 
-table {
-    margin: 10px;
-}
-
-th {
-    padding: 10px;
-}
-
-td {
-    padding: 5px;
-    text-align: justify;
-}
-
-input[type = text],
-input[type = number],
-input[type = search]{
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 15px;
-    text-decoration: none;
-}
-
-input[type = text]:hover,
-input[type = number]:hover,
-input[type = search]:hover {
-    background-color: whitesmoke;
-    color: black;
-}
-
-input[type = text]:focus,
-input[type = number]:focus,
-input[type = search]:focus {
-    background-color: whitesmoke;
-    color: black;
-    outline: none;
-}
-
-input[type = submit] {
-    border-radius: 10px;
-    padding: 5px;
-    font-size: 15px;
-    cursor: pointer;
-}
-
-input[type = submit]:hover {
-    background-color: #333333;
-    color: white;
-}
-
 /* Style the footer */
 .footer {
 	width: 100%;

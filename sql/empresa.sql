@@ -11,7 +11,7 @@ USE empresa;
 /*!40101 SET NAMES utf8mb4 */;
 
 CREATE TABLE `pessoa` (
-  `Id` int(11) NOT NULL,
+  `Id` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `Nome` varchar(255) NOT NULL,
   `Idade` int(11) NOT NULL,
   `Salario` int(11) NOT NULL,
@@ -27,11 +27,6 @@ INSERT INTO `pessoa` (`Id`, `Nome`, `Idade`, `Salario`, `telefone`, `Cod`) VALUE
 (37, 'Isabel Espada', 28, 86000, NULL, 1100),
 (42, 'Antonio Dias', 43, 74000, NULL, 1500),
 (49, 'Jose Antonio', 17, 210000, NULL, 1500);
-
-ALTER TABLE `pessoa`
-  ADD PRIMARY KEY (`Id`),
-  ADD KEY `nome` (`Nome`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

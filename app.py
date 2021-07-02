@@ -1,18 +1,17 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
-from flask_bootstrap import Bootstrap
 
 DB_NAME = 'empresa'
-DB_USER = 'daniel'
-DB_PORT = 3306
+DB_USER = 'root'
+DB_PORT = 3307
 
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://{}@localhost:{}/{}'.format(DB_USER, DB_PORT, DB_NAME)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SECRET_KEY'] = 'supersecurekey'
 
 db = SQLAlchemy(app)
-bootstrap = Bootstrap(app)
 
 
 class Pessoa(db.Model):
@@ -21,7 +20,7 @@ class Pessoa(db.Model):
     idade = db.Column(db.String(120), unique=True, nullable=False)
     salario = db.Column(db.Integer, nullable=False)
     telefone = db.Column(db.Integer, nullable=True, default=0)
-    cod = db.Column(db.String(80), unique=True, nullable=True, default=9999)
+    cod = db.Column(db.String(80), nullable=True, default=9999)
 
     def format(self):
         return {

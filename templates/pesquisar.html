@@ -1,15 +1,16 @@
 {% extends "index.html" %}
 
 {% block content %}
-    <h2>Pesquisar</h2>
+    <h2 class="text-center">Pesquisar</h2>
 
-    <form action="{{ url_for('pesquisar') }}" method="POST">
-        <label for="pesquisar">Pesquisar:</label>
-        <input type="search" id="pesquisar" name="pesquisar">
-        <input type="submit" value="Pesquisar">
+    <form class="form-inline form-group-sm" action="{{ url_for('pesquisar') }}" method="POST" >
+        <label>
+            <input class="form-control my-2" type="search" id="pesquisar" name="pesquisar" placeholder="Pesquisar">
+        </label>
+        <input type="submit" value="Pesquisar" class="btn btn-outline-success my-2">
     </form>
 
-    <table border='1'>
+    <table border='1' class="table table-responsive table-hover">
         <tr>
             <th>Id</th>
             <th>Nome</th>
